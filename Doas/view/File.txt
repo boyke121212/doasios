@@ -1,0 +1,17 @@
+@objc private func openPreview(_ gesture: UITapGestureRecognizer) {
+
+    guard let img = gesture.view as? UIImageView else { return }
+
+    let index = img.tag
+
+    if index < absensiManager.capturedFiles.count {
+
+        let file = absensiManager.capturedFiles[index]
+
+        let vc = PreviewFotoActivity()
+        vc.fotoUri = file.path
+        vc.modalPresentationStyle = .fullScreen
+
+        present(vc, animated: true)
+    }
+}
