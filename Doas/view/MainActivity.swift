@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainActivity: UIViewController {
+final class MainActivity: Boyke {
     
     private let backgroundImageView = UIImageView()
     private let logoImageView = UIImageView()
@@ -113,14 +113,10 @@ final class MainActivity: UIViewController {
     }
     
     @objc private func goToLogin() {
-        let vc = LoginPage()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+      openPage(LoginPage())
     }
     
     private func goToHome() {
-        let vc = Home()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false)
+      openPage(Home())
     }
 }

@@ -301,9 +301,7 @@ final class LoginPage: Boyke {
                 let prefs = SecurePrefs()
                 prefs.saveAesKey(aesKey)
 
-                let home = Home()
-                home.modalPresentationStyle = .fullScreen
-                self.present(home, animated: true)
+                self.openPage(Home())
             },
 
             onLogout: { message in
